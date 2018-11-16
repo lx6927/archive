@@ -11,14 +11,6 @@ CommonJS 模块 动态加载：`require('fs')`
 
 顶层的this指向undefined：利用顶层的this等于undefined这个语法点，可以侦测当前代码是否在 ES6 模块之中
 
-浏览器加载 ES6 模块：
-```
-<script type="module" src="./foo.js"></script>
-<script type="module">
-  import utils from "./utils.js";
-</script>
-```
-
 
 ### export 接口
 规定对外的接口m，
@@ -105,6 +97,16 @@ if (x === 1) {
 } else {
   import { foo } from 'module2';
 }
+```
+
+
+
+## 浏览器加载 ES6 模块：
+```
+<script type="module" src="./foo.js"></script>
+<script type="module">
+  import utils from "./utils.js";
+</script>
 ```
 
 
