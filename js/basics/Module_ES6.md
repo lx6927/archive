@@ -60,7 +60,7 @@ export {fn};
 
 ```
 // 报错
-//没有提供对外的接口，直接输出1，1只是一个值，不是接口
+// 没有提供对外的接口，直接输出1，1只是一个值，不是接口
 export 1;
 
 // 报错
@@ -68,7 +68,7 @@ var m = 1;
 export m;
 
 // 报错
-//function和class的输出也必须遵守这样的写法
+// function和class的输出也必须遵守这样的写法
 function f() {}
 export f;
 

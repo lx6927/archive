@@ -3,9 +3,12 @@
 快速比较两个数组是否相等,不区分字符串和数字：
 `[1,2].toString()===['1','2].toString()` // return "1,2"
 
+***
 快速深拷贝：
 `let copy_obj=(JSON.parse(JSON.stringify(obj)))`
 
+***
+获取实例对象的原型:`Object.getPrototypeOf()`
 
 ## 使用 Array.includes 来处理多重条件
 
