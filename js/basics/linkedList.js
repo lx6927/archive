@@ -24,11 +24,13 @@ class LinkedList {
 	p = this.head; // 指针，指向最后一个节点
 
 	find = (node) => {
-
+		let current_node = this.head;
+		while (current_node.next) {
+			current_node = current_node.next;
+		}
 		for (let i = 0; i < this.length; i++) {
-			// head.next
-			let current_node=this.head.next;
-			if(current_node===node) return node.data;
+			if (i > 1) current_node = current_node.next;
+			if (current_node === node) return node;
 		}
 	};
 
@@ -36,23 +38,33 @@ class LinkedList {
 	insert = (data, insert_node) => {
 
 		let new_node = new Node(data);
+		let p = this.head;
 		this.length++;
 
-		if (this.length === 1) insert_node = this.head;
-		if (insert_node === undefined) insert_node = new_node;
-		this.p.next = insert_node;
-		this.p = insert_node;
+		if (this.length === 1) {
+			this.head.next = new_node;
+		} else if (insert_node !== undefined) {
+			let _insert_node = this.find(insert_node);
+			new_node.next = _insert_node.next;
+			_insert_node.next = new_node;
+		} else {
+			this.p.next = new_node;
+		}
+		// if (this.length === 1) insert_node = this.head;
+		// if (insert_node === undefined) insert_node = this.p;
+		// this.p.next = insert_node;
+		// this.p = insert_node;
 		return new_node;
-
 	};
 
-	remove=()=>{
+	remove = () => {
 
 	}
 }
 
 let LList = new LinkedList();
 let node = LList.insert('test');
+// LList.find(node)
 let node2 = LList.insert('test111');
-let node3 = LList.insert('test333', node);
-console.log(node, node2,node3, LList);
+// let node3 = LList.insert('test333', node);
+console.log(node, node2, LList);
