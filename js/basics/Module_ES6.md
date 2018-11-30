@@ -1,6 +1,6 @@
 # ES6
 
-《ECMAScript 2015 标准》（简称 ES2015）
+>《ECMAScript 2015 标准》（简称 ES2015）
 
 
 ## Module
@@ -24,9 +24,11 @@ import fn from './export-default';
 
 
 
-静态加载：import '...'  Module 模块
-动态加载：`require('fs')` CommonJS 模块
-动态加载：import()
+`import '...'`:静态加载/编译时加载，Module 模块
+
+`require('fs')`:动态加载/运行时加载，CommonJS 模块
+
+`import()`:动态加载
 
 自动采用严格模式(es5)
 
@@ -35,7 +37,9 @@ import fn from './export-default';
 
 ### export 输出接口
 规定对外的接口m，
+
 在接口名与模块内部变量之间，建立了一一对应的关系，
+
 export 声明语句||{变量}
 ```
 // 正确
@@ -75,8 +79,9 @@ export f;
 ```
 
 
-## export default 默认输出
+### export default 默认输出
 一个模块只能有一个默认输出
+
 import命令指定任意名字
 ```
 export default function () {
@@ -100,9 +105,14 @@ import { default as foo } from 'modules';
 
 ## import
 import变量都是只读
+
 import命令是编译阶段执行的，在代码运行之前
+
 import会提升到整个模块的头部，首先执行
+
 多次重复执行同一句import语句，只会执行一次
+
+import和export命令只能在模块的顶层，不能在代码块之中
 ```
 // 重命名
 import { lastName as surname } from './profile.js';
