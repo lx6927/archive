@@ -1,3 +1,33 @@
+***
+创建对象等几种方法
+1.对象字面量：
+```
+var obj1={name:111};
+var obj2=new Object({name:111})
+```
+2.构造函数:
+```
+var M=function(){
+    this.name=111;
+}
+var obj3=new M();
+```
+3.Object.create():
+```
+var P={name:111};
+var obj4=Object.create(P);
+```
+
+构造函数--new-->实例对象--__protp__-->原型对象
+构造函数--prototype-->原型对象
+
+
+***
+题：基本数据类型？
+
+答：Number、String 、Boolean、Null和Undefined
+
+***
 题：`["1","2","3"].map(parseInt)`返回值？
 
 答：返回值`[1, NaN, NaN]`
@@ -87,6 +117,45 @@ class Storage{
 
 
 ### css
+***
+盒模型
+
+标准模型：
+width=content
+
+`box-sizing:content-box;`
+
+IE模型：
+
+width=content+padding+border
+
+`box-sizing:border-box;`
+
+***
+JS获取盒模型对应的宽和高
+dom.style.width: width,获取内联样式所设置的宽
+dom.currentStyle.width: IE专用
+dom.clientWidth: width+padding
+dom.scrollWidth: width+padding+溢出尺寸
+dom.offsetWidth: width+padding+border
+dom.getBoundingClientRect().width: width+padding+border,根据元素在视窗中的绝对位置来获取宽
+window.getComputedStyle(dom).width: 获取计算后的width
+
+
+***
+边距重叠解决方案(BFC)
+
+BFC(Block Formatting Context),块级格式化上下文
+
+边距重叠情况？父子之间，兄弟之间
+
+创建BFC
+float属性不为none（脱离文档流）
+position为absolute或fixed
+display为inline-block,table-cell,table-caption,flex,inine-flex
+overflow:hidden/auto不为visible
+根元素
+
 ***
 题：css居中
 
