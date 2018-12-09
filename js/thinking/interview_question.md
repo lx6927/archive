@@ -18,7 +18,7 @@ var P={name:111};
 var obj4=Object.create(P);
 ```
 
-构造函数--new-->实例对象--__protp__-->原型对象
+构造函数--new-->实例对象--`__protp__`-->原型对象
 构造函数--prototype-->原型对象
 
 
