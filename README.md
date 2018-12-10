@@ -3,6 +3,10 @@
 
 ### js
 
+> 面试题
+
+[面试题](https://github.com/lx6927/archive/blob/master/js/thinking/interview_question.md)
+
 
 > es6
 
@@ -13,6 +17,4 @@
 
 > thinking
 
-[tips](https://github.com/lx6927/archive/blob/master/js/thinking/tips.md)
-
-[trap](https://github.com/lx6927/archive/blob/master/js/thinking/trap.md)
+[自定义整理的小技巧](https://github.com/lx6927/archive/blob/master/js/thinking/tips.md)

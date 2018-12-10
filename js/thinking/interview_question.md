@@ -1,4 +1,35 @@
 ***
+前端跨域通信
+1. CORS跨域资源共享
+    服务端：Access-Control-Allow-Origin
+
+    先Options请求，然后协商成功后，在正式请求
+
+2. postMessage
+    条件：相同协议http/https,端口号,主机
+
+    A->B:
+
+    A页面：
+    otherWindow.postMessage(data, B页面("协议://域名:端口");
+
+    B页面：
+    window.addEventListener("message", (event)=>{...}, false);
+
+3. WebSocket
+
+
+4. JSONP
+
+
+5. hash iframe
+    设置hash页面不刷新
+    url= url+'#xxxxxx' //不刷新，?xxxx会刷新
+
+
+
+
+***
 创建对象等几种方法
 1.对象字面量：
 ```
@@ -118,43 +149,45 @@ class Storage{
 
 ### css
 ***
-盒模型
-
-标准模型：
-width=content
-
-`box-sizing:content-box;`
-
-IE模型：
-
-width=content+padding+border
-
-`box-sizing:border-box;`
-
-***
-JS获取盒模型对应的宽和高
-dom.style.width: width,获取内联样式所设置的宽
-dom.currentStyle.width: IE专用
-dom.clientWidth: width+padding
-dom.scrollWidth: width+padding+溢出尺寸
-dom.offsetWidth: width+padding+border
-dom.getBoundingClientRect().width: width+padding+border,根据元素在视窗中的绝对位置来获取宽
-window.getComputedStyle(dom).width: 获取计算后的width
+> 盒模型
 
 
-***
-边距重叠解决方案(BFC)
+1. 基本概念：标准模型+IE模型
 
-BFC(Block Formatting Context),块级格式化上下文
+    标准模型：width=content
 
-边距重叠情况？父子之间，兄弟之间
+    css:`box-sizing:content-box;`
 
-创建BFC
-float属性不为none（脱离文档流）
-position为absolute或fixed
-display为inline-block,table-cell,table-caption,flex,inine-flex
-overflow:hidden/auto不为visible
-根元素
+    IE模型：width=content+padding+border
+
+    css:`box-sizing:border-box;`
+
+
+
+2. JS获取盒模型对应的宽和高
+
+    1) dom.style.width: width,获取内联样式所设置的宽
+    2) dom.currentStyle.width: IE专用
+    3) dom.clientWidth: width+padding
+    4) dom.scrollWidth: width+padding+溢出尺寸
+    5) dom.offsetWidth: width+padding+border
+    6) dom.getBoundingClientRect().width: width+padding+border,根据元素在视窗中的绝对位置来获取宽
+    7) window.getComputedStyle(dom).width: 获取计算后的width
+
+
+3. 边距重叠解决方案(BFC)
+
+    BFC(Block Formatting Context),块级格式化上下文
+
+    边距重叠情况？父子之间，兄弟之间
+
+    创建BFC:
+
+    1) float属性不为none（脱离文档流）
+    2) position为absolute或fixed
+    3) display为inline-block,table-cell,table-caption,flex,inine-flex
+    4) overflow:hidden/auto不为visible
+    5) 根元素
 
 ***
 题：css居中
